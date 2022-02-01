@@ -1,0 +1,475 @@
+/* reset css */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.btn,
+button,
+button:focus,
+input:focus,
+textarea:focus,
+select,
+select:focus,
+a:focus {
+  outline: 0px !important;
+}
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+button[disabled] {
+  pointer-events: none;
+}
+input {
+  padding: 0;
+}
+input:required {
+  box-shadow: none;
+}
+input:invalid {
+  box-shadow: none;
+}
+
+/* color settings */
+
+$white: #ffffff;
+$grey: #e5e5e5;
+$black: #2a2a2a;
+$circle-black: #333333;
+/* display settings*/
+
+.d-none {
+  display: none;
+}
+
+// flex settings
+.flex-column {
+  flex-direction: column;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.align-content-start {
+  align-content: flex-start;
+}
+.align-content-end {
+  align-content: flex-end;
+}
+.align-content-center {
+  align-content: center;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-center {
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// size settings
+
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+);
+
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $num, $val in $sizes {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $val;
+    }
+  }
+}
+
+// font-settings
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Nunito+Sans:wght@700&display=swap");
+//
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  height: 100%;
+  background-color: $white;
+}
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle-container::after {
+      content: "#{$i}";
+    }
+  }
+}
+
+/* mobile version*/
+
+.main-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .finish {
+    position: absolute;
+    top: 72px;
+    left: 15px;
+  }
+
+  .steps-wrapper {
+    position: absolute;
+    top: 134px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 24px 15px 24px 15px;
+  }
+}
+
+.step {
+  display: flex;
+  flex-wrap: wrap;
+  color: $white;
+  text-align: center;
+  position: relative;
+  @include getStepNums(3);
+  h4 {
+    display: none;
+  }
+}
+
+.circle-container {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid $black;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::after {
+    color: $black;
+  }
+}
+
+.connect-line {
+  display: block;
+  height: 1px;
+  width: 60px;
+  background-color: #000000;
+  position: absolute;
+  top: 16px;
+  right: 55px;
+}
+
+.step-one {
+  width: 100%;
+  position: relative;
+  top: 190px;
+  display: flex;
+  flex-wrap: wrap;
+  h2 {
+    width: 100%;
+    margin: 24px 15px;
+  }
+}
+
+.type-your-phone-number,
+.type-your-email,
+.city-select,
+.type-your-address {
+  width: 20rem;
+  input,
+  select {
+    width: 345px;
+  }
+}
+
+.form-row {
+  margin: 24px 16px;
+}
+
+input,
+select {
+  height: 40px;
+  border-radius: 4px;
+  margin-top: 8px;
+  border: 1px solid #4a4a4a;
+}
+
+.left-content-wrapper {
+  h2,
+  h4,
+  label,
+  option {
+    font-family: "Noto Sans TC", sans-serif;
+  }
+
+  hr {
+    position: absolute;
+    top: 82rem;
+    left: 1.5rem;
+    width: 20rem;
+    border: solid #e6e6eb 1px;
+  }
+
+  .control-panel {
+    width: 100%;
+    position: absolute;
+    top: 1400px;
+    margin: 30px;
+
+    button {
+      margin: 10px;
+      background: #f67599;
+      color: $white;
+      width: 18rem;
+      height: 46px;
+      border-radius: 8px;
+    }
+
+    .btn-outline::before {
+      content: "\2190";
+      margin-right: 10px;
+    }
+
+    .btn-primary::after {
+      content: "\2192";
+      margin-left: 10px;
+    }
+  }
+
+  ::-webkit-input-placeholder {
+    padding-left: 10px;
+  }
+}
+
+.right-content-wrapper {
+  position: absolute;
+  top: 50rem;
+  width: 90%;
+  margin: 5%;
+  border: 1px solid #f0f0f5;
+  border-radius: 8px;
+  margin-top: 5rem;
+
+  .basket-wrapper {
+    width: 100%;
+
+    .product-wrapper {
+      height: 110px;
+      display: flex;
+      flex-flow: column wrap;
+      margin: 16px;
+      align-items: space-between;
+
+      .quantity-circle img {
+        width: 26px;
+        height: 27px;
+      }
+
+      h4 {
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 400;
+      }
+
+      h4,
+      span {
+        text-align: end;
+      }
+
+      h4,
+      .quantity-wrapper {
+        margin-bottom: 18px;
+      }
+
+      span {
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      .quantity-wrapper {
+        display: flex;
+        justify-content: flex-end;
+
+        span {
+          font-family: "Noto Sans TC", sans-serif;
+          font-weight: 400;
+          margin: 0 30px;
+        }
+      }
+    }
+
+    .freight-wrapper,
+    .amount-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      span,
+      h4 {
+        margin: 10px;
+      }
+
+      h4 {
+        font-family: "Nunito Sans", sans-serif;
+      }
+
+      span {
+        font-family: "Noto Sans TC", sans-serif;
+      }
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .basket-wrapper h3 {
+      display: none;
+    }
+
+    hr {
+      width: 90%;
+      color: #f0f0f5;
+      height: 1px;
+    }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .main-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50rem 50rem;
+    column-gap: 30px;
+
+    .left-content-wrapper {
+      position: relative;
+      grid-column: 1/7;
+      hr {
+        position: absolute;
+        top: 42rem;
+        width: 44rem;
+      }
+      .control-panel {
+        position: absolute;
+        top: 43rem;
+        left: 5rem;
+      }
+    }
+
+    .steps-wrapper {
+      width: 100%;
+      .step {
+        h4 {
+          display: flex;
+          color: $black;
+          padding: 5px;
+        }
+        .connect-line {
+          position: absolute;
+          left: -75px;
+        }
+      }
+    }
+
+    .step-one {
+      position: absolute;
+      width: 100%;
+
+      .call {
+        width: 14.5rem;
+      }
+
+      .type-your-name input {
+        width: 28rem;
+      }
+
+      .type-your-email,
+      .type-your-phone-number input {
+        width: 18rem;
+      }
+
+      .city-select {
+        width: 14.5rem;
+      }
+
+      .type-your-address input {
+        width: 28rem;
+      }
+    }
+
+    .right-content-wrapper {
+      grid-column: 8/13;
+      position: absolute;
+      top: 5rem;
+
+      .basket-wrapper h3 {
+        display: flex;
+        margin: 32px 24px;
+      }
+    }
+  }
+}
