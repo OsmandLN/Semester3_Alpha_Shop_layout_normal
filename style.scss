@@ -169,6 +169,8 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
   .finish {
     position: absolute;
@@ -178,7 +180,7 @@ body {
 
   .steps-wrapper {
     position: absolute;
-    top: 134px;
+    top: 8rem;
     left: 15px;
     display: flex;
     align-items: center;
@@ -195,60 +197,71 @@ body {
   text-align: center;
   position: relative;
   @include getStepNums(3);
+
+  .circle-container {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 1px solid $black;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::after {
+      color: $black;
+    }
+  }
+
+  .connect-line {
+    display: block;
+    height: 1px;
+    width: 60px;
+    background-color: #000000;
+    position: absolute;
+    top: 16px;
+    right: 55px;
+  }
+
   h4 {
     display: none;
   }
 }
 
-.circle-container {
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  border: 1px solid $black;
-  background-color: $white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &::after {
-    color: $black;
-  }
-}
-
-.connect-line {
-  display: block;
-  height: 1px;
-  width: 60px;
-  background-color: #000000;
+// 表單內部
+.step-area {
   position: absolute;
-  top: 16px;
-  right: 55px;
+  height: 30rem;
+  top: 15rem;
+  margin: 15px;
 }
 
-.step-one {
-  width: 100%;
-  position: relative;
-  top: 190px;
-  display: flex;
-  flex-wrap: wrap;
-  h2 {
-    width: 100%;
-    margin: 24px 15px;
-  }
+// .form-wrapper {
+//   width: 200px;
+// }
+
+// .type-your-name {
+//   input {
+//     width: 1000px;
+//   }
+// }
+
+.city-select {
+  width: 315px;
 }
 
 .type-your-phone-number,
 .type-your-email,
-.city-select,
 .type-your-address {
-  width: 20rem;
+  width: 350px;
   input,
   select {
-    width: 345px;
+    width: 90%;
   }
 }
 
 .form-row {
-  margin: 24px 16px;
+  width: 120px;
+  margin: 10px;
 }
 
 input,
@@ -274,11 +287,11 @@ select {
     width: 20rem;
     border: solid #e6e6eb 1px;
   }
-
+  //  按鈕部分
   .control-panel {
     width: 100%;
     position: absolute;
-    top: 1400px;
+    top: 85rem;
     margin: 30px;
 
     button {
@@ -397,6 +410,7 @@ select {
   }
 }
 
+// Desktop version
 @media screen and (min-width: 375px) {
   .main-content {
     position: relative;
@@ -410,12 +424,12 @@ select {
       grid-column: 1/7;
       hr {
         position: absolute;
-        top: 42rem;
+        top: 55rem;
         width: 44rem;
       }
       .control-panel {
         position: absolute;
-        top: 43rem;
+        top: 60rem;
         left: 5rem;
       }
     }
@@ -435,30 +449,36 @@ select {
       }
     }
 
-    .step-one {
-      position: absolute;
-      width: 100%;
+    // .step-area {
+    //   display: flex;
+    //   flex-wrap: wrap;
+    // }
+    // .step-one {
+    //   position: absolute;
+    //   width: 100%;
+    // }
 
-      .call {
-        width: 14.5rem;
-      }
+    .call {
+      width: 14.5rem;
+      grid-column: 1/3
+    }
 
-      .type-your-name input {
-        width: 28rem;
-      }
+    .type-your-name input {
+      width: 28rem;
+      grid-column: 3/7;
+    }
 
-      .type-your-email,
-      .type-your-phone-number input {
-        width: 18rem;
-      }
+    .type-your-email,
+    .type-your-phone-number input {
+      width: 18rem;
+    }
 
-      .city-select {
-        width: 14.5rem;
-      }
+    .city-select {
+      width: 14.5rem;
+    }
 
-      .type-your-address input {
-        width: 28rem;
-      }
+    .type-your-address input {
+      width: 28rem;
     }
 
     .right-content-wrapper {
