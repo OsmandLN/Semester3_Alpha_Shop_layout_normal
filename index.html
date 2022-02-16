@@ -7,7 +7,6 @@
     <title>=ALPHA Shop=</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-
   <body>
     <div class="main-content">
       <div class="left-content-wrapper">
@@ -15,162 +14,161 @@
         <div id="step-control" class="stepper-panel">
           <div class="steps-wrapper">
             <div class="step">
-              <div class="circle-container"></div>
-              <h4>寄送地址</h4>
+              <div class="circle-container step-opacity"></div>
+              <div class="step-title step-opacity">寄送地址</div>
             </div>
-
             <div class="step">
-              <div class="circle-container"></div>
+              <div class="circle-container step-opacity"></div>
               <span class="connect-line"></span>
-              <h4>運送方式</h4>
+              <div class="step-title step-opacity">運送方式</div>
             </div>
-
             <div class="step">
-              <div class="circle-container"></div>
+              <div class="circle-container step-opacity"></div>
               <span class="connect-line"></span>
-              <h4>付款資訊</h4>
+              <div class="step-title step-opacity">付款資訊</div>
             </div>
           </div>
         </div>
         <form id="a-form">
           <div class="step-area">
             <h2>寄送地址</h2>
-
-            <div class="form-row">
-              <label>稱謂</label>
-              <div class="select-wrapper">
-                <select name="a-type" id="a-type" required class="call">
-                  <option value="" disabled selected>請選擇稱謂</option>
-                  <option value="mr">先生</option>
-                  <option value="ms">小姐</option>
-                </select>
+            <div class="step-one-content">
+              <div class="form-row" id="call">
+                <label>稱謂</label>
+                <div class="select-wrapper">
+                  <select name="a-type" id="a-type" required class="call">
+                    <option value="" disabled selected>請選擇稱謂</option>
+                    <option value="mr">先生</option>
+                    <option value="ms">小姐</option>
+                  </select>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>姓名</label>
-              <div class="form-wrapper">
-                <form class="type-your-name" action="">
-                  <input type="text" placeholder="請輸入姓名" />
-                </form>
+              <div class="form-row" id="name">
+                <label>姓名</label>
+                <div class="form-wrapper">
+                  <form class="type-your-name" action="">
+                    <input type="text" placeholder="請輸入姓名" />
+                  </form>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>電話</label>
-              <div class="form-wrapper">
-                <form class="type-your-phone-number" action="">
-                  <input type="text" placeholder="請輸入行動電話" />
-                </form>
+              <div class="form-row" id="phone">
+                <label>電話</label>
+                <div class="form-wrapper">
+                  <form class="type-your-phone-number" action="">
+                    <input type="text" placeholder="請輸入行動電話" />
+                  </form>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>Email</label>
-              <div class="form-wrapper">
-                <form class="type-your-email" action="">
-                  <input type="text" placeholder="請輸入電子郵件" />
-                </form>
+              <div class="form-row" id="email">
+                <label>Email</label>
+                <div class="form-wrapper">
+                  <form class="type-your-email" action="">
+                    <input type="text" placeholder="請輸入電子郵件" />
+                  </form>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>縣市</label>
-              <div class="select-wrapper">
-                <select name="a-type" class="city-select" id="a-type" required>
-                  <option value="" disabled selected>請選擇縣市</option>
-                  <option value="tpe">臺北市</option>
-                  <option value="new-tpe">新北市</option>
-                  <option value="ty">桃園市</option>
-                  <option value="tc">臺中市</option>
-                  <option value="tn">臺南市</option>
-                  <option value="kh">高雄市</option>
-                  <option value="hccounty">新竹縣</option>
-                  <option value="ml">苗栗縣</option>
-                  <option value="ch">彰化縣</option>
-                  <option value="nt">南投縣</option>
-                  <option value="yl">雲林縣</option>
-                  <option value="chiayicounty">嘉義縣</option>
-                  <option value="pt">屏東縣</option>
-                  <option value="yl">宜蘭縣</option>
-                  <option value="hl">花蓮縣</option>
-                  <option value="tt">臺東縣</option>
-                  <option value="ph">澎湖縣</option>
-                  <option value="km">金門縣</option>
-                  <option value="lc">連江縣</option>
-                  <option value="keelung">基隆市</option>
-                  <option value="hccity">新竹市</option>
-                  <option value="chiayicity">嘉義市</option>
-                </select>
+              <div class="form-row" id="city">
+                <label>縣市</label>
+                <div class="select-wrapper">
+                  <select
+                    name="a-type"
+                    class="city-select"
+                    id="a-type"
+                    required
+                  >
+                    <option value="" disabled selected>請選擇縣市</option>
+                    <option value="tpe">臺北市</option>
+                    <option value="new-tpe">新北市</option>
+                    <option value="ty">桃園市</option>
+                    <option value="tc">臺中市</option>
+                    <option value="tn">臺南市</option>
+                    <option value="kh">高雄市</option>
+                    <option value="hccounty">新竹縣</option>
+                    <option value="ml">苗栗縣</option>
+                    <option value="ch">彰化縣</option>
+                    <option value="nt">南投縣</option>
+                    <option value="yl">雲林縣</option>
+                    <option value="chiayicounty">嘉義縣</option>
+                    <option value="pt">屏東縣</option>
+                    <option value="yl">宜蘭縣</option>
+                    <option value="hl">花蓮縣</option>
+                    <option value="tt">臺東縣</option>
+                    <option value="ph">澎湖縣</option>
+                    <option value="km">金門縣</option>
+                    <option value="lc">連江縣</option>
+                    <option value="keelung">基隆市</option>
+                    <option value="hccity">新竹市</option>
+                    <option value="chiayicity">嘉義市</option>
+                  </select>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>地址</label>
-              <div class="form-wrapper">
-                <form class="type-your-address" action="">
-                  <input type="text" placeholder="請輸入地址" />
-                </form>
+              <div class="form-row" id="address">
+                <label>地址</label>
+                <div class="form-wrapper">
+                  <form class="type-your-address" action="">
+                    <input type="text" placeholder="請輸入地址" />
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-
           <div class="step-area d-none">
             <h2>運送方式</h2>
-
-            <div class="delivery-wrapper">
-              <div class="delivery-way">
-                <input name="method" type="radio" value="standard" />
-                <label class="standard-delivery" for="">標準運送</label>
-                <label class="time-of-delivery" for="">約 3~7 個工作天</label>
-                <span>免費</span>
-              </div>
-
-              <div class="delivery-way">
-                <input name="method" type="radio" value="dhl" />
-                <label class="dhl-delivery" for="">DHL貨運</label>
-                <label class="time-of-delivery" for="">48小時內送達</label>
-                <span>$500</span>
+            <div class="step-two-content">
+              <div class="delivery-wrapper">
+                <div class="delivery-way">
+                  <input name="method" type="radio" value="standard" />
+                  <div class="way-and-fee">
+                    <label class="standard-delivery" for="">標準運送</label>
+                    <span>免費</span>
+                  </div>
+                  <label class="time-of-delivery" for="">約 3~7 個工作天</label>
+                </div>
+                <div class="delivery-way">
+                  <input name="method" type="radio" value="dhl" />
+                  <div class="way-and-fee">
+                    <label class="dhl-delivery" for="">DHL貨運</label>
+                    <span>$500</span>
+                  </div>
+                  <label class="time-of-delivery" for="">48小時內送達</label>
+                </div>
               </div>
             </div>
           </div>
-
           <div class="step-area d-none">
             <h2>付款資訊</h2>
-
-            <div class="form-row">
-              <label>持卡人姓名</label>
-              <div class="form-wrapper">
-                <form class="card-owner-name" action="">
-                  <input type="text" placeholder="John Doe" />
-                </form>
+            <div class="step-three-content">
+              <div class="form-row">
+                <label>持卡人姓名</label>
+                <div class="form-wrapper">
+                  <form class="card-owner-name" action="">
+                    <input type="text" placeholder="John Doe" />
+                  </form>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>卡號</label>
-              <div class="form-wrapper">
-                <form class="credit-card-number" action="">
-                  <input type="text" placeholder="1111 2222 3333 4444" />
-                </form>
+              <div class="form-row">
+                <label>卡號</label>
+                <div class="form-wrapper">
+                  <form class="credit-card-number" action="">
+                    <input type="text" placeholder="1111 2222 3333 4444" />
+                  </form>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>有效日期</label>
-              <div class="form-wrapper">
-                <form class="card-expiry-date" action="">
-                  <input type="text" placeholder="MM/YY" />
-                </form>
+              <div class="form-row">
+                <label>有效日期</label>
+                <div class="form-wrapper">
+                  <form class="card-expiry-date" action="">
+                    <input type="text" placeholder="MM/YY" />
+                  </form>
+                </div>
               </div>
-            </div>
-
-            <div class="form-row">
-              <label>CVC / CCV</label>
-              <div class="form-wrapper">
-                <form class="card-security-code" action="">
-                  <input type="text" placeholder="123" />
-                </form>
+              <div class="form-row">
+                <label>CVC / CCV</label>
+                <div class="form-wrapper">
+                  <form class="card-security-code" action="">
+                    <input type="text" placeholder="123" />
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -180,44 +178,41 @@
             <button class="btn btn-primary">下一步</button>
           </div>
           <!-- <div class="button-wrapper">
-          <button class="forward">上一步</button>
-          <button class="backward">下一步</button>
-        </div> -->
+            <button class="forward">上一步</button>
+            <button class="backward">下一步</button>
+          </div> -->
         </form>
       </div>
-
       <div class="right-content-wrapper">
         <div class="basket-wrapper">
           <h3>購物籃</h3>
-
           <div class="product-wrapper">
-            <img src="/product-images/Block.png" alt="" />
+            <img src="product-images/Block.png" alt="" />
             <div class="name-quantity-wrapper">
               <h4>破壞補丁修身牛仔褲</h4>
               <div class="quantity-wrapper">
                 <div class="quantity-circle">
-                  <img src="/icons/minus.svg" alt="" />
+                  <img src="icons/minus.svg" alt="" />
                 </div>
                 <span>1</span>
                 <div class="quantity-circle">
-                  <img src="/icons/plus.svg" alt="" />
+                  <img src="icons/plus.svg" alt="" />
                 </div>
               </div>
             </div>
             <span>$3,999</span>
           </div>
-
           <div class="product-wrapper">
-            <img src="/product-images/Block2.png" alt="" />
+            <img src="product-images/Block2.png" alt="" />
             <div class="name-quantity-wrapper">
               <h4>刷色直筒牛仔褲</h4>
               <div class="quantity-wrapper">
                 <div class="quantity-circle">
-                  <img src="/icons/minus.svg" alt="" />
+                  <img src="icons/minus.svg" alt="" />
                 </div>
                 <span>1</span>
                 <div class="quantity-circle">
-                  <img src="/icons/plus.svg" alt="" />
+                  <img src="icons/plus.svg" alt="" />
                 </div>
               </div>
             </div>
@@ -229,7 +224,6 @@
             <h4>免費</h4>
           </div>
           <hr />
-
           <div class="amount-wrapper">
             <span>小計</span>
             <h4>$5,298</h4>
