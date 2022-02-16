@@ -141,7 +141,7 @@ $sizes: (
   }
 }
 
-// font-settings
+// font-import
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Nunito+Sans:wght@700&display=swap");
 //
 
@@ -163,7 +163,17 @@ body {
   }
 }
 
-/* mobile version*/
+.step-opacity {
+  opacity: 0.5;
+}
+
+// .opacity-color {
+//   background-color: $circle-black;
+//   color: $white;
+//   border: $circle-black 1px solid;
+// }
+
+/* mobile version start*/
 
 .main-content {
   position: relative;
@@ -171,23 +181,26 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
 
-  .finish {
-    position: absolute;
-    top: 72px;
-    left: 15px;
+.finish {
+  position: absolute;
+  top: 72px;
+  left: 15px;
+  h2 {
+    margin-left: 1.5rem;
   }
+}
 
-  .steps-wrapper {
-    position: absolute;
-    top: 8rem;
-    left: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    margin: 24px 15px 24px 15px;
-  }
+.steps-wrapper {
+  position: absolute;
+  top: 8rem;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 24px 15px 24px 15px;
 }
 
 .step {
@@ -222,47 +235,141 @@ body {
     right: 55px;
   }
 
-  h4 {
+  .step-title {
     display: none;
+  }
+
+  &.checked {
+    .circle-container {
+      background-color: $circle-black;
+      color: $white;
+    }
+  }
+
+  &.checked .circle-container::after {
+    content: "\2714";
+  }
+
+  // &.active {
+  //   .circle-container {
+  //     border-color: $circle-black;
+  //     color: $circle-black;
+  //   }
+  // }
+}
+
+.step-area {
+  h2 {
+    position: absolute;
+    top: 13rem;
+    left: 2.7rem;
   }
 }
 
 // 表單內部
-.step-area {
+.step-one-content,
+.step-two-content,
+.step-three-content {
   position: absolute;
   height: 30rem;
   top: 15rem;
+  left: 2rem;
   margin: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-// .form-wrapper {
-//   width: 200px;
-// }
-
-// .type-your-name {
-//   input {
-//     width: 1000px;
-//   }
-// }
-
-.city-select {
-  width: 315px;
-}
-
-.type-your-phone-number,
-.type-your-email,
-.type-your-address {
-  width: 350px;
-  input,
+// form-step1
+#call {
+  margin-right: 0.5rem;
   select {
-    width: 90%;
+    width: 100%;
   }
 }
 
-.form-row {
-  width: 120px;
-  margin: 10px;
+#name {
+  input {
+    width: 100%;
+  }
 }
+
+#phone {
+  input {
+    width: 100%;
+  }
+}
+
+#email {
+  margin-right: 0.5rem;
+  input {
+    width: 100%;
+  }
+}
+
+#city {
+  margin-right: 0.5rem;
+  select {
+    width: 100%;
+  }
+}
+
+#address {
+  input {
+    width: 100%;
+  }
+}
+
+// form-step2
+.delivery-wrapper {
+  width: 100%;
+  .delivery-way {
+    width: 350px;
+    height: 60px;
+    margin: 24px 0;
+    border: 1px solid #f0f0f5;
+    border-radius: 4px;
+    position: relative;
+    input {
+      width: 20px;
+      height: 20px;
+      margin: 20px;
+      &[type="radio"] {
+        -webkit-appearance: none;
+        border-radius: 50%;
+        cursor: pointer;
+        &:checked {
+          box-shadow: inset 0 0 0 6px #2a2a2a;
+        }
+      }
+    }
+    span {
+      position: absolute;
+      top: 13px;
+      left: 302px;
+      font-size: 12px;
+    }
+    &:active {
+      border: 1px solid #2a2a2a;
+    }
+  }
+}
+
+.standard-delivery,
+.dhl-delivery {
+  position: absolute;
+  top: 11px;
+  left: 60px;
+  font-size: 14px;
+}
+
+.time-of-delivery {
+  position: absolute;
+  top: 33px;
+  left: 60px;
+  font-size: 12px;
+}
+
+// form-step3
 
 input,
 select {
@@ -274,7 +381,7 @@ select {
 
 .left-content-wrapper {
   h2,
-  h4,
+  .step-title,
   label,
   option {
     font-family: "Noto Sans TC", sans-serif;
@@ -284,7 +391,7 @@ select {
     position: absolute;
     top: 82rem;
     left: 1.5rem;
-    width: 20rem;
+    // width: 20rem;
     border: solid #e6e6eb 1px;
   }
   //  按鈕部分
@@ -298,7 +405,7 @@ select {
       margin: 10px;
       background: #f67599;
       color: $white;
-      width: 18rem;
+      width: 13rem;
       height: 46px;
       border-radius: 8px;
     }
@@ -321,7 +428,7 @@ select {
 
 .right-content-wrapper {
   position: absolute;
-  top: 50rem;
+  top: 45rem;
   width: 90%;
   margin: 5%;
   border: 1px solid #f0f0f5;
@@ -413,83 +520,124 @@ select {
 // Desktop version
 @media screen and (min-width: 375px) {
   .main-content {
-    position: relative;
+    width: 100%;
+    // position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50rem 50rem;
-    column-gap: 30px;
+    grid-template-rows: auto;
+    grid-template-areas: "left left left left left left right right right right right right";
+    // grid-column-gap: 0.5fr;
 
     .left-content-wrapper {
-      position: relative;
-      grid-column: 1/7;
+      // position: relative;
+      grid-area: left;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      // grid-column-gap: 0.5fr;
       hr {
+        // grid-column: 1/7;
         position: absolute;
-        top: 55rem;
-        width: 44rem;
+        top: 33rem;
+        width: 35rem;
       }
       .control-panel {
         position: absolute;
-        top: 60rem;
+        top: 33rem;
         left: 5rem;
       }
     }
+  }
 
-    .steps-wrapper {
-      width: 100%;
-      .step {
-        h4 {
-          display: flex;
-          color: $black;
-          padding: 5px;
-        }
-        .connect-line {
-          position: absolute;
-          left: -75px;
-        }
-      }
+  .finish {
+    h2 {
+      margin-left: 2rem;
     }
-
-    // .step-area {
-    //   display: flex;
-    //   flex-wrap: wrap;
-    // }
-    // .step-one {
-    //   position: absolute;
-    //   width: 100%;
-    // }
-
-    .call {
-      width: 14.5rem;
-      grid-column: 1/3
-    }
-
-    .type-your-name input {
-      width: 28rem;
-      grid-column: 3/7;
-    }
-
-    .type-your-email,
-    .type-your-phone-number input {
-      width: 18rem;
-    }
-
-    .city-select {
-      width: 14.5rem;
-    }
-
-    .type-your-address input {
-      width: 28rem;
-    }
-
-    .right-content-wrapper {
-      grid-column: 8/13;
-      position: absolute;
-      top: 5rem;
-
-      .basket-wrapper h3 {
+  }
+  .steps-wrapper {
+    // width: 100%;
+    grid-column: 1/7;
+    margin-left: 2rem;
+    .step {
+      .step-title {
         display: flex;
-        margin: 32px 24px;
+        color: $black;
+        padding: 5px;
       }
+      .connect-line {
+        position: absolute;
+        left: -75px;
+      }
+    }
+  }
+
+  .step-one-content,
+  .step-two-content,
+  .step-three-content {
+    // grid-column: 1/7;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 80px);
+    // grid-column-gap: 0.5fr;
+  }
+
+  #call {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    select {
+      width: 100%;
+    }
+  }
+
+  #name {
+    grid-column: 3/7;
+    grid-row: 1/2;
+    input {
+      width: 100%;
+    }
+  }
+
+  #email {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    input {
+      width: 100%;
+    }
+  }
+
+  #phone {
+    grid-column: 4/7;
+    grid-row: 2/3;
+    input {
+      width: 100%;
+    }
+  }
+
+  #city {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    select {
+      width: 100%;
+    }
+  }
+
+  #address {
+    grid-column: 3/7;
+    grid-row: 3/4;
+    input {
+      width: 100%;
+    }
+  }
+
+  .right-content-wrapper {
+    grid-area: right;
+    position: absolute;
+    top: 5rem;
+
+    .basket-wrapper h3 {
+      display: flex;
+      margin: 32px 24px;
     }
   }
 }
