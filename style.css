@@ -234,17 +234,12 @@ body {
 .finish {
   position: absolute;
   top: 72px;
-  left: 15px;
-}
-
-.finish h2 {
-  margin-left: 1.5rem;
+  left: 1rem;
 }
 
 .steps-wrapper {
   position: absolute;
-  top: 8rem;
-  left: 15px;
+  top: 7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,7 +249,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 80%;
+  width: 95%;
   margin: 24px 15px 24px 15px;
 }
 
@@ -327,8 +322,8 @@ body {
 
 .step-area h2 {
   position: absolute;
-  top: 13rem;
-  left: 2.7rem;
+  top: 11.5rem;
+  margin: 1rem;
 }
 
 .step-one-content,
@@ -337,7 +332,6 @@ body {
   position: absolute;
   height: 30rem;
   top: 15rem;
-  left: 2rem;
   margin: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -348,38 +342,60 @@ body {
 
 #call {
   margin-right: 0.5rem;
+  color: #808080;
 }
 
 #call select {
-  width: 100%;
+  width: 133px;
+  color: #2a2a2a;
+}
+
+#name {
+  margin-left: 1.3rem;
+  color: #808080;
 }
 
 #name input {
-  width: 100%;
+  width: 183px;
+  color: #999999;
+}
+
+#phone {
+  color: #808080;
 }
 
 #phone input {
-  width: 100%;
+  width: 345px;
+  color: #999999;
 }
 
 #email {
   margin-right: 0.5rem;
+  color: #808080;
 }
 
 #email input {
-  width: 100%;
+  width: 345px;
+  color: #999999;
 }
 
 #city {
   margin-right: 0.5rem;
+  color: #808080;
 }
 
 #city select {
-  width: 100%;
+  width: 345px;
+  color: #999999;
+}
+
+#address {
+  color: #808080;
 }
 
 #address input {
-  width: 100%;
+  width: 345px;
+  color: #999999;
 }
 
 .delivery-wrapper {
@@ -455,23 +471,24 @@ select {
 
 .left-content-wrapper hr {
   position: absolute;
-  top: 82rem;
-  left: 1.5rem;
+  top: 73.5rem;
+  left: 15px;
+  width: 345px;
   border: solid #e6e6eb 1px;
 }
 
 .left-content-wrapper .control-panel {
   width: 100%;
   position: absolute;
-  top: 85rem;
-  margin: 30px;
+  top: 74.5rem;
+  margin: 1rem auto;
 }
 
 .left-content-wrapper .control-panel button {
   margin: 10px;
   background: #f67599;
   color: #ffffff;
-  width: 13rem;
+  width: 345px;
   height: 46px;
   border-radius: 8px;
 }
@@ -492,7 +509,7 @@ select {
 
 .right-content-wrapper {
   position: absolute;
-  top: 45rem;
+  top: 42rem;
   width: 90%;
   margin: 5%;
   border: 1px solid #f0f0f5;
@@ -578,6 +595,7 @@ select {
 .right-content-wrapper .basket-wrapper .freight-wrapper h4,
 .right-content-wrapper .basket-wrapper .amount-wrapper h4 {
   font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
 }
 
 .right-content-wrapper .basket-wrapper .freight-wrapper span,
@@ -590,14 +608,13 @@ select {
   height: 100px;
 }
 
-.right-content-wrapper .basket-wrapper .basket-wrapper h3 {
+.right-content-wrapper .basket-wrapper h3 {
   display: none;
 }
 
 .right-content-wrapper .basket-wrapper hr {
   width: 90%;
-  color: #f0f0f5;
-  height: 1px;
+  border: 0.5px solid #f0f0f5;
 }
 
 @media screen and (min-width: 375px) {

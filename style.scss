@@ -186,20 +186,20 @@ body {
 .finish {
   position: absolute;
   top: 72px;
-  left: 15px;
-  h2 {
-    margin-left: 1.5rem;
-  }
+  left: 1rem;
+  // h2 {
+  //   margin-left: 1.5rem;
+  // }
 }
 
 .steps-wrapper {
   position: absolute;
-  top: 8rem;
-  left: 15px;
+  top: 7rem;
+  // left: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 95%;
   margin: 24px 15px 24px 15px;
 }
 
@@ -261,8 +261,8 @@ body {
 .step-area {
   h2 {
     position: absolute;
-    top: 13rem;
-    left: 2.7rem;
+    top: 11.5rem;
+    margin: 1rem;
   }
 }
 
@@ -273,7 +273,6 @@ body {
   position: absolute;
   height: 30rem;
   top: 15rem;
-  left: 2rem;
   margin: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -282,40 +281,53 @@ body {
 // form-step1
 #call {
   margin-right: 0.5rem;
+  color: #808080;
   select {
-    width: 100%;
+    width: 133px;
+    color: #2a2a2a;
   }
 }
 
 #name {
+  margin-left: 1.3rem;
+  color: #808080;
   input {
-    width: 100%;
+    width: 183px;
+    color: #999999;
   }
 }
 
 #phone {
+  color: #808080;
   input {
-    width: 100%;
+    width: 345px;
+    color: #999999;
   }
 }
 
 #email {
   margin-right: 0.5rem;
+  color: #808080;
   input {
-    width: 100%;
+    width: 345px;
+    color: #999999;
   }
 }
 
 #city {
   margin-right: 0.5rem;
+  color: #808080;
   select {
-    width: 100%;
+    width: 345px;
+    color: #999999;
   }
 }
 
 #address {
+  color: #808080;
   input {
-    width: 100%;
+    width: 345px;
+    color: #999999;
   }
 }
 
@@ -389,23 +401,23 @@ select {
 
   hr {
     position: absolute;
-    top: 82rem;
-    left: 1.5rem;
-    // width: 20rem;
+    top: 73.5rem;
+    left: 15px;
+    width: 345px;
     border: solid #e6e6eb 1px;
   }
   //  按鈕部分
   .control-panel {
     width: 100%;
     position: absolute;
-    top: 85rem;
-    margin: 30px;
+    top: 74.5rem;
+    margin: 1rem auto;
 
     button {
       margin: 10px;
       background: #f67599;
       color: $white;
-      width: 13rem;
+      width: 345px;
       height: 46px;
       border-radius: 8px;
     }
@@ -428,7 +440,7 @@ select {
 
 .right-content-wrapper {
   position: absolute;
-  top: 45rem;
+  top: 42rem;
   width: 90%;
   margin: 5%;
   border: 1px solid #f0f0f5;
@@ -493,6 +505,7 @@ select {
 
       h4 {
         font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
       }
 
       span {
@@ -505,14 +518,15 @@ select {
       height: 100px;
     }
 
-    .basket-wrapper h3 {
+    h3 {
       display: none;
     }
 
     hr {
       width: 90%;
-      color: #f0f0f5;
-      height: 1px;
+      border: 0.5px solid #f0f0f5;
+      // color: #f0f0f5;
+      // height: 1px;
     }
   }
 }
