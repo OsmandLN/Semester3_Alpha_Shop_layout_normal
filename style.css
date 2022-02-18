@@ -619,7 +619,8 @@ select {
 
 @media screen and (min-width: 375px) {
   .main-content {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[12];
@@ -629,35 +630,40 @@ select {
         grid-template-areas: "left left left left left left right right right right right right";
   }
   .main-content .left-content-wrapper {
+    position: relative;
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 6;
     grid-area: left;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
   }
   .main-content .left-content-wrapper hr {
     position: absolute;
-    top: 33rem;
+    top: 36rem;
     width: 35rem;
   }
   .main-content .left-content-wrapper .control-panel {
     position: absolute;
-    top: 33rem;
-    left: 5rem;
+    top: 36.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main-content .left-content-wrapper .control-panel button {
+    width: 11rem;
   }
   .finish h2 {
-    margin-left: 2rem;
+    margin: 0 0 0 -1rem;
   }
   .steps-wrapper {
+    position: absolute;
+    top: 10rem;
     -ms-grid-column: 1;
     -ms-grid-column-span: 6;
     grid-column: 1/7;
-    margin-left: 2rem;
+    margin: 0;
   }
   .steps-wrapper .step .step-title {
     display: -webkit-box;
@@ -670,10 +676,22 @@ select {
     position: absolute;
     left: -75px;
   }
+  #a-form {
+    width: 100%;
+    position: absolute;
+    top: 3rem;
+  }
+  .step-area h2 {
+    margin: 0;
+  }
   .step-one-content,
   .step-two-content,
   .step-three-content {
-    width: 600px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    width: 100%;
+    margin: 1rem auto;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[6];
