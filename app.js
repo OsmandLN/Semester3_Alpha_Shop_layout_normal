@@ -61,6 +61,6 @@ btnControl.addEventListener("click", function (event) {
   if (step === 0) {
     prevBtn.classList.add("d-none");
   } else if (step === 2) {
-    nextBtn.innerHTML = "完成結帳";
+    nextBtn.innerHTML = "確認下單";
   }
 });
