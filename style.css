@@ -518,13 +518,27 @@ select {
   position: absolute;
   top: 74.5rem;
   margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.left-content-wrapper .control-panel button {
+.left-content-wrapper .control-panel .btn-outline {
+  margin: 5px;
+  background: #ffffff;
+  color: #000000;
+  width: 5rem;
+  height: 46px;
+}
+
+.left-content-wrapper .control-panel .btn-primary {
   margin: 10px;
   background: #f67599;
   color: #ffffff;
-  width: 345px;
+  width: 156px;
   height: 46px;
   border-radius: 8px;
 }

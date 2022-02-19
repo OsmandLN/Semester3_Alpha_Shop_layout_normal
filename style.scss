@@ -446,12 +446,22 @@ select {
     position: absolute;
     top: 74.5rem;
     margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
 
-    button {
+    .btn-outline {
+      margin: 5px;
+      background: #ffffff;
+      color: #000000;
+      width: 5rem;
+      height: 46px;
+    }
+
+    .btn-primary {
       margin: 10px;
       background: #f67599;
       color: $white;
-      width: 345px;
+      width: 156px;
       height: 46px;
       border-radius: 8px;
     }
