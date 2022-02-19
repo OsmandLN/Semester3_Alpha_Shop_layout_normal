@@ -677,7 +677,7 @@ select {
         grid-template-columns: repeat(12, 1fr);
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-        grid-template-areas: "left left left left left left right right right right right right";
+        grid-template-areas: "left left left left left left . right right right right right";
   }
   .main-content .left-content-wrapper {
     position: relative;
@@ -689,7 +689,8 @@ select {
   .main-content .left-content-wrapper hr {
     position: absolute;
     top: 36rem;
-    width: 35rem;
+    left: 0;
+    width: 30rem;
   }
   .main-content .left-content-wrapper .control-panel {
     position: absolute;
@@ -701,9 +702,6 @@ select {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .main-content .left-content-wrapper .control-panel button {
-    width: 11rem;
-  }
   .finish h2 {
     margin: 0 0 0 -1rem;
   }
@@ -714,6 +712,22 @@ select {
     -ms-grid-column-span: 6;
     grid-column: 1/7;
     margin: 0;
+  }
+  .steps-wrapper .step {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .steps-wrapper .step .circle-container {
+    width: 24px;
+    height: 24px;
+  }
+  .steps-wrapper .step .circle-container::after {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 12px;
   }
   .steps-wrapper .step .step-title {
     display: -webkit-box;
@@ -767,6 +781,7 @@ select {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
+    margin-left: 0;
   }
   #name input {
     width: 100%;
@@ -817,8 +832,8 @@ select {
   }
   .right-content-wrapper {
     -ms-grid-row: 1;
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 6;
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 5;
     grid-area: right;
     position: absolute;
     top: 5rem;

@@ -584,32 +584,26 @@ select {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
-    grid-template-areas: "left left left left left left right right right right right right";
+    grid-template-areas: "left left left left left left . right right right right right";
     // grid-column-gap: 0.5fr;
 
     .left-content-wrapper {
       position: relative;
 
       grid-area: left;
-      // display: grid;
-      // grid-template-columns: repeat(6, 1fr);
-      // grid-template-rows: auto;
-      // grid-column-gap: 0.5fr;
+
       hr {
-        // grid-column: 1/7;
         position: absolute;
         top: 36rem;
-        width: 35rem;
+        left: 0;
+        width: 30rem;
       }
       .control-panel {
         position: absolute;
         top: 36.5rem;
-        // left: 5rem;
+
         display: flex;
         justify-content: space-between;
-        button {
-          width: 11rem;
-        }
       }
     }
   }
@@ -635,6 +629,16 @@ select {
     // margin-left: 2rem;
     margin: 0;
     .step {
+      display: flex;
+      align-items: center;
+      .circle-container {
+        width: 24px;
+        height: 24px;
+        &::after {
+          font-family: "Nunito Sans", sans-serif;
+          font-size: 12px;
+        }
+      }
       .step-title {
         display: flex;
         color: $black;
@@ -683,6 +687,7 @@ select {
   #name {
     grid-column: 3/7;
     grid-row: 1/2;
+    margin-left: 0;
     input {
       width: 100%;
     }
