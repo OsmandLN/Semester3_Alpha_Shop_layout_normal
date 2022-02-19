@@ -383,12 +383,46 @@ body {
 
 // form-step3
 
+#card-holder {
+  width: 345px;
+  height: 5rem;
+  color: #808080;
+  input {
+    width: 100%;
+  }
+}
+
+#card-number {
+  width: 345px;
+  height: 5rem;
+  margin: -5.5rem 0 0 0;
+  color: #808080;
+  input {
+    width: 100%;
+  }
+}
+
+#expiry-date {
+  width: 170px;
+  height: 5rem;
+  margin: -5.5rem 0 0 0;
+  color: #808080;
+}
+
+#security-code {
+  width: 170px;
+  height: 5rem;
+  margin: -5.5rem 0 0 5px;
+  color: #808080;
+}
+
 input,
 select {
   height: 40px;
   border-radius: 4px;
   margin-top: 8px;
   border: 1px solid #4a4a4a;
+  color: #999999;
 }
 
 .left-content-wrapper {
