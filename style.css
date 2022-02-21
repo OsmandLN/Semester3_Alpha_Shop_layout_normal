@@ -669,7 +669,7 @@ select {
 
 @media screen and (min-width: 375px) {
   .main-content {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: -ms-grid;
     display: grid;
@@ -690,7 +690,7 @@ select {
     position: absolute;
     top: 36rem;
     left: 0;
-    width: 30rem;
+    width: 33.8rem;
   }
   .main-content .left-content-wrapper .control-panel {
     position: absolute;
@@ -738,11 +738,10 @@ select {
   }
   .steps-wrapper .step .connect-line {
     position: absolute;
-    left: -75px;
+    left: -5.5rem;
   }
-  #a-form {
-    width: 100%;
-    position: absolute;
+  .step-area {
+    position: relative;
     top: 3rem;
   }
   .step-area h2 {
@@ -828,6 +827,34 @@ select {
     grid-row: 3/4;
   }
   #address input {
+    width: 100%;
+  }
+  .step-three-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #card-holder {
+    width: 350px;
+    margin-bottom: -2.5rem;
+  }
+  #card-number {
+    width: 350px;
+    margin-top: -6.5rem;
+  }
+  #expiry-date {
+    width: 255px;
+    margin-top: -10.5rem;
+    margin-right: 20px;
+  }
+  #expiry-date input {
+    width: 100%;
+  }
+  #security-code {
+    width: 255px;
+    margin-top: -10.5rem;
+  }
+  #security-code input {
     width: 100%;
   }
   .right-content-wrapper {

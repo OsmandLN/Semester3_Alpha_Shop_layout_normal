@@ -578,7 +578,7 @@ select {
 // Desktop version
 @media screen and (min-width: 375px) {
   .main-content {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     // position: relative;
     display: grid;
@@ -596,7 +596,7 @@ select {
         position: absolute;
         top: 36rem;
         left: 0;
-        width: 30rem;
+        width: 33.8rem;
       }
       .control-panel {
         position: absolute;
@@ -646,19 +646,21 @@ select {
       }
       .connect-line {
         position: absolute;
-        left: -75px;
+        left: -5.5rem;
       }
     }
   }
 
-  #a-form {
-    width: 100%;
-    // grid-column: 1/7;
-    position: absolute;
-    top: 3rem;
-  }
+  // #a-form {
+  //   width: 100%;
+  //   // grid-column: 1/7;
+  //   position: absolute;
+  //   top: 3rem;
+  // }
 
   .step-area {
+    position: relative;
+    top: 3rem;
     h2 {
       margin: 0;
     }
@@ -725,6 +727,36 @@ select {
     }
   }
 
+  .step-three-content {
+    display: flex;
+  }
+
+  #card-holder {
+    width: 350px;
+    margin-bottom: -2.5rem;
+  }
+
+  #card-number {
+    width: 350px;
+    margin-top: -6.5rem;
+  }
+
+  #expiry-date {
+    width: 255px;
+    margin-top: -10.5rem;
+    margin-right: 20px;
+    input {
+      width: 100%;
+    }
+  }
+
+  #security-code {
+    width: 255px;
+    margin-top: -10.5rem;
+    input {
+      width: 100%;
+    }
+  }
   // .control-panel {
   //   button {
   //     width: 5rem;
