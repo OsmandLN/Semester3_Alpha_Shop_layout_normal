@@ -24,6 +24,7 @@ btnControl.addEventListener("click", function (event) {
     stepAreas[step].classList.toggle("d-none");
     stepAreas[step + 1].classList.toggle("d-none");
     step += 1;
+    console.log(step);
 
     // 按上一頁
   } else if (
@@ -34,9 +35,15 @@ btnControl.addEventListener("click", function (event) {
     stepAreas[step].classList.toggle("d-none");
     stepAreas[step - 1].classList.toggle("d-none");
     step -= 1;
+    console.log(step);
   }
 
-  // 處理stepper狀態
+  setBtnStatus();
+  processStepperStatus();
+});
+
+// 處理stepper狀態
+function processStepperStatus() {
   if (step === 0) {
     circleContainers[0].classList.remove("step-opacity");
     stepTitles[0].classList.remove("step-opacity");
@@ -56,11 +63,15 @@ btnControl.addEventListener("click", function (event) {
     circleContainers[2].classList.remove("step-opacity");
     stepTitles[2].classList.remove("step-opacity");
   }
+}
 
-  // 處理按鈕狀態
+// 處理按鈕狀態
+function setBtnStatus() {
   if (step === 0) {
     prevBtn.classList.add("d-none");
+  } else if (step === 1) {
+    nextBtn.innerHTML = "下一步";
   } else if (step === 2) {
     nextBtn.innerHTML = "確認下單";
   }
-});
+}
