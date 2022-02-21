@@ -167,12 +167,6 @@ body {
   opacity: 0.5;
 }
 
-// .opacity-color {
-//   background-color: $circle-black;
-//   color: $white;
-//   border: $circle-black 1px solid;
-// }
-
 /* mobile version start*/
 
 .main-content {
@@ -187,15 +181,11 @@ body {
   position: absolute;
   top: 72px;
   left: 1rem;
-  // h2 {
-  //   margin-left: 1.5rem;
-  // }
 }
 
 .steps-wrapper {
   position: absolute;
   top: 7rem;
-  // left: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -249,13 +239,6 @@ body {
   &.checked .circle-container::after {
     content: "\2714";
   }
-
-  // &.active {
-  //   .circle-container {
-  //     border-color: $circle-black;
-  //     color: $circle-black;
-  //   }
-  // }
 }
 
 .step-area {
@@ -569,8 +552,6 @@ select {
     hr {
       width: 90%;
       border: 0.5px solid #f0f0f5;
-      // color: #f0f0f5;
-      // height: 1px;
     }
   }
 }
@@ -580,12 +561,10 @@ select {
   .main-content {
     width: 90%;
     margin: 0 auto;
-    // position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     grid-template-areas: "left left left left left left . right right right right right";
-    // grid-column-gap: 0.5fr;
 
     .left-content-wrapper {
       position: relative;
@@ -611,22 +590,13 @@ select {
   .finish {
     h2 {
       margin: 0 0 0 -1rem;
-      // position:absolute;
-      // top:1rem
-      // left: 0
     }
   }
-
-  // #step-control {
-  //   position: relative;
-  // }
 
   .steps-wrapper {
     position: absolute;
     top: 10rem;
-    // width: 100%;
     grid-column: 1/7;
-    // margin-left: 2rem;
     margin: 0;
     .step {
       display: flex;
@@ -651,13 +621,6 @@ select {
     }
   }
 
-  // #a-form {
-  //   width: 100%;
-  //   // grid-column: 1/7;
-  //   position: absolute;
-  //   top: 3rem;
-  // }
-
   .step-area {
     position: relative;
     top: 3rem;
@@ -675,7 +638,6 @@ select {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 80px);
-    // grid-column-gap: 0.5fr;
   }
 
   #call {
@@ -757,11 +719,6 @@ select {
       width: 100%;
     }
   }
-  // .control-panel {
-  //   button {
-  //     width: 5rem;
-  //   }
-  // }
 
   .right-content-wrapper {
     grid-area: right;
