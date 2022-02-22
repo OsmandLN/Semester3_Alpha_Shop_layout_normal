@@ -10,6 +10,7 @@ const prevBtn = document.querySelector(".btn-outline");
 
 let step = 0;
 
+console.log(`now is step ${step}`);
 // todo: stepper狀態切換(active and checked)
 
 // 表單切換
@@ -69,7 +70,9 @@ function processStepperStatus() {
 function setBtnStatus() {
   if (step === 0) {
     prevBtn.classList.add("d-none");
+    prevBtn.classList.remove("d-block");
   } else if (step === 1) {
+    prevBtn.classList.add("d-block");
     nextBtn.innerHTML = "下一步";
   } else if (step === 2) {
     nextBtn.innerHTML = "確認下單";
