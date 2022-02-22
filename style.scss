@@ -68,10 +68,15 @@ $white: #ffffff;
 $grey: #e5e5e5;
 $black: #2a2a2a;
 $circle-black: #333333;
+
 /* display settings*/
 
 .d-none {
   display: none;
+}
+
+.d-block {
+  display: block;
 }
 
 // flex settings
@@ -367,36 +372,38 @@ body {
 // form-step3
 
 #card-holder {
-  width: 345px;
   height: 5rem;
   color: #808080;
   input {
-    width: 100%;
+    width: 345px;
   }
 }
 
 #card-number {
-  width: 345px;
   height: 5rem;
   margin: -5.5rem 0 0 0;
   color: #808080;
   input {
-    width: 100%;
+    width: 345px;
   }
 }
 
 #expiry-date {
-  width: 170px;
   height: 5rem;
   margin: -5.5rem 0 0 0;
   color: #808080;
+  input {
+    width: 170px;
+  }
 }
 
 #security-code {
-  width: 170px;
   height: 5rem;
   margin: -5.5rem 0 0 5px;
   color: #808080;
+  input {
+    width: 170px;
+  }
 }
 
 input,
@@ -559,7 +566,7 @@ select {
 // Desktop version
 @media screen and (min-width: 375px) {
   .main-content {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -580,9 +587,6 @@ select {
       .control-panel {
         position: absolute;
         top: 36.5rem;
-
-        display: flex;
-        justify-content: space-between;
       }
     }
   }
@@ -689,35 +693,45 @@ select {
     }
   }
 
-  .step-three-content {
-    display: flex;
-  }
-
   #card-holder {
-    width: 350px;
-    margin-bottom: -2.5rem;
+    grid-column: 1/5;
+    grid-row: 1/2;
+    input {
+      width: 100%;
+    }
   }
 
   #card-number {
-    width: 350px;
-    margin-top: -6.5rem;
+    grid-column: 1/5;
+    grid-row: 2/3;
+    margin-top: 0;
+    input {
+      width: 100%;
+    }
   }
 
   #expiry-date {
-    width: 255px;
-    margin-top: -10.5rem;
-    margin-right: 20px;
+    grid-column: 1/4;
+    grid-row: 3/4;
+    margin-top: 0;
+    margin-right: 25px;
     input {
       width: 100%;
     }
   }
 
   #security-code {
-    width: 255px;
-    margin-top: -10.5rem;
+    grid-column: 4/7;
+    grid-row: 3/4;
+    margin-top: 0;
     input {
       width: 100%;
     }
+  }
+
+  .btn-primary {
+    position: absolute;
+    left: 70%;
   }
 
   .right-content-wrapper {

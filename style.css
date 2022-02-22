@@ -82,6 +82,10 @@ input:invalid {
   display: none;
 }
 
+.d-block {
+  display: block;
+}
+
 .flex-column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -455,38 +459,42 @@ body {
 }
 
 #card-holder {
-  width: 345px;
   height: 5rem;
   color: #808080;
 }
 
 #card-holder input {
-  width: 100%;
+  width: 345px;
 }
 
 #card-number {
-  width: 345px;
   height: 5rem;
   margin: -5.5rem 0 0 0;
   color: #808080;
 }
 
 #card-number input {
-  width: 100%;
+  width: 345px;
 }
 
 #expiry-date {
-  width: 170px;
   height: 5rem;
   margin: -5.5rem 0 0 0;
   color: #808080;
 }
 
-#security-code {
+#expiry-date input {
   width: 170px;
+}
+
+#security-code {
   height: 5rem;
   margin: -5.5rem 0 0 5px;
   color: #808080;
+}
+
+#security-code input {
+  width: 170px;
 }
 
 input,
@@ -669,7 +677,7 @@ select {
 
 @media screen and (min-width: 375px) {
   .main-content {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     display: -ms-grid;
     display: grid;
@@ -695,12 +703,6 @@ select {
   .main-content .left-content-wrapper .control-panel {
     position: absolute;
     top: 36.5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .finish h2 {
     margin: 0 0 0 -1rem;
@@ -829,33 +831,57 @@ select {
   #address input {
     width: 100%;
   }
-  .step-three-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
   #card-holder {
-    width: 350px;
-    margin-bottom: -2.5rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  #card-holder input {
+    width: 100%;
   }
   #card-number {
-    width: 350px;
-    margin-top: -6.5rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    margin-top: 0;
+  }
+  #card-number input {
+    width: 100%;
   }
   #expiry-date {
-    width: 255px;
-    margin-top: -10.5rem;
-    margin-right: 20px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    margin-top: 0;
+    margin-right: 25px;
   }
   #expiry-date input {
     width: 100%;
   }
   #security-code {
-    width: 255px;
-    margin-top: -10.5rem;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4/7;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    margin-top: 0;
   }
   #security-code input {
     width: 100%;
+  }
+  .btn-primary {
+    position: absolute;
+    left: 70%;
   }
   .right-content-wrapper {
     -ms-grid-row: 1;
