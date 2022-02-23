@@ -168,9 +168,9 @@ body {
   }
 }
 
-.step-opacity {
-  opacity: 0.5;
-}
+// .inactive {
+//   opacity: 0.5;
+// }
 
 /* mobile version start*/
 
@@ -234,6 +234,10 @@ body {
     display: none;
   }
 
+  // &.inactive {
+  //   opacity: 0.5;
+  // }
+
   &.checked {
     .circle-container {
       background-color: $circle-black;
@@ -244,6 +248,10 @@ body {
   &.checked .circle-container::after {
     content: "\2714";
   }
+}
+
+.inactive {
+  opacity: 0.5;
 }
 
 .step-area {
@@ -618,13 +626,17 @@ select {
         color: $black;
         padding: 5px;
       }
-      .connect-line {
-        position: absolute;
-        left: -5.5rem;
-      }
+      // .connect-line {
+      //   position: absolute;
+      //   left: -5.5rem;
+      // }
     }
   }
-
+  .connect-line {
+    position: absolute;
+    left: -5.5rem;
+  }
+  
   .step-area {
     position: relative;
     top: 3rem;
