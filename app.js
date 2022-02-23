@@ -46,23 +46,25 @@ btnControl.addEventListener("click", function (event) {
 // 處理stepper狀態
 function processStepperStatus() {
   if (step === 0) {
-    circleContainers[0].classList.remove("step-opacity");
-    stepTitles[0].classList.remove("step-opacity");
+    circleContainers[1].classList.add("inactive");
+    stepTitles[1].classList.add("inactive");
   } else if (step === 1) {
-    circleContainers[0].classList.remove("step-opacity");
+    circleContainers[0].classList.remove("inactive");
     circleContainers[0].classList.add("checked");
-    stepTitles[0].classList.remove("step-opacity");
-    circleContainers[1].classList.remove("step-opacity");
-    stepTitles[1].classList.remove("step-opacity");
+    stepTitles[0].classList.remove("inactive");
+    circleContainers[1].classList.remove("inactive");
+    stepTitles[1].classList.remove("inactive");
+    circleContainers[2].classList.add("inactive");
+    stepTitles[2].classList.add("inactive");
   } else if (step === 2) {
-    circleContainers[0].classList.remove("step-opacity");
+    circleContainers[0].classList.remove("inactive");
     circleContainers[0].classList.add("checked");
-    stepTitles[0].classList.remove("step-opacity");
-    circleContainers[1].classList.remove("step-opacity");
+    stepTitles[0].classList.remove("inactive");
+    circleContainers[1].classList.remove("inactive");
     circleContainers[1].classList.add("checked");
-    stepTitles[1].classList.remove("step-opacity");
-    circleContainers[2].classList.remove("step-opacity");
-    stepTitles[2].classList.remove("step-opacity");
+    stepTitles[1].classList.remove("inactive");
+    circleContainers[2].classList.remove("inactive");
+    stepTitles[2].classList.remove("inactive");
   }
 }
 
