@@ -215,8 +215,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: $black;
     &::after {
-      color: $black;
+      font-family: "Nunito Sans", sans-serif;
+      // &.checked {
+      //   content: "\2714";
+      // }
+    }
+
+    &.checked {
+      background-color: $circle-black;
+      color: $white;
+      // content: "\2714";
+      // font-size: 1rem;
+      &.circle-container::after {
+        // color: $white;
+        content: "\2714";
+      }
     }
   }
 
@@ -224,8 +239,10 @@ body {
     display: block;
     height: 1px;
     width: 60px;
+    border: 1px solid #000000;
     background-color: #000000;
     position: absolute;
+    transform: translateX(-20%);
     top: 16px;
     right: 55px;
   }
@@ -238,20 +255,13 @@ body {
   //   opacity: 0.5;
   // }
 
-  &.checked {
-    .circle-container {
-      background-color: $circle-black;
-      color: $white;
-    }
-  }
-
-  &.checked .circle-container::after {
-    content: "\2714";
-  }
+  // &.checked .circle-container::after {
+  //   content: "\2714";
+  // }
 }
 
 .inactive {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .step-area {
@@ -590,7 +600,8 @@ select {
         position: absolute;
         top: 36rem;
         left: 0;
-        width: 33.8rem;
+        // width: 33.8rem;
+        width: 100%;
       }
       .control-panel {
         position: absolute;
@@ -636,7 +647,7 @@ select {
     position: absolute;
     left: -5.5rem;
   }
-  
+
   .step-area {
     position: relative;
     top: 3rem;
