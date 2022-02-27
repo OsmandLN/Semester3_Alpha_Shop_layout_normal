@@ -1,5 +1,6 @@
 const stepTitles = document.querySelectorAll(".step-title");
 const circleContainers = document.querySelectorAll(".circle-container");
+const connectLines = document.querySelectorAll(".connect-line");
 // 把三個步驟區塊存成類陣列的形式
 const stepAreas = document.querySelectorAll(".step-area");
 // 選取包裹按鈕的容器
@@ -46,13 +47,18 @@ btnControl.addEventListener("click", function (event) {
 // 處理stepper狀態
 function processStepperStatus() {
   if (step === 0) {
+    circleContainers[0].classList.remove("checked");
     circleContainers[1].classList.add("inactive");
     stepTitles[1].classList.add("inactive");
+    connectLines[1].classList.toggle("inactive");
   } else if (step === 1) {
     circleContainers[0].classList.remove("inactive");
     circleContainers[0].classList.add("checked");
     stepTitles[0].classList.remove("inactive");
+    connectLines[0].classList.remove("inactive");
+    connectLines[1].classList.remove("inactive");
     circleContainers[1].classList.remove("inactive");
+    circleContainers[1].classList.remove("checked");
     stepTitles[1].classList.remove("inactive");
     circleContainers[2].classList.add("inactive");
     stepTitles[2].classList.add("inactive");
@@ -63,6 +69,8 @@ function processStepperStatus() {
     circleContainers[1].classList.remove("inactive");
     circleContainers[1].classList.add("checked");
     stepTitles[1].classList.remove("inactive");
+    connectLines[0].classList.remove("inactive");
+    connectLines[1].classList.remove("inactive");
     circleContainers[2].classList.remove("inactive");
     stepTitles[2].classList.remove("inactive");
   }
