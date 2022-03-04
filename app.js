@@ -8,7 +8,9 @@ const nextBtn = document.querySelector(".btn-primary")
 const prevBtn = document.querySelector(".btn-outline")
 const thingsToBuy = document.querySelector(".toBuy")
 const deliveryWrapper = document.querySelector(".delivery-wrapper")
-const deliveryFee = document.querySelector(".delivery-fee")
+const deliveryPanel = document.querySelector(".delivery-panel")
+let deliveryFee = 0
+let totalAmount = 0
 const productsInCart = [
   {
     id: 1,
@@ -149,19 +151,17 @@ function onQuantityBtnClicked(event) {
 
   if (event.target.className === "plus-icon") {
     itemToAdd.quantity += 1
-    console.log(itemToAdd.quantity)
   } else if (event.target.className === "minus-icon") {
     if (itemToAdd.quantity <= 0) {
       return
     }
     itemToAdd.quantity -= 1
-    console.log(itemToAdd.quantity)
   }
-  renderPurchasingCart(productsInCart)
+  thingsToBuy.innerHTML = renderPurchasingCart(productsInCart)
+  processTotalAmount()
 }
 
 thingsToBuy.addEventListener("click", onQuantityBtnClicked)
-// todo: 目前無法成功渲染更改過後的數量至畫面上
 
 // 處理運費的顯示內容
 function processDeliveryFee(event) {
@@ -171,33 +171,30 @@ function processDeliveryFee(event) {
     event.target.nextElementSibling.children[0].className ===
     "standard-delivery"
   ) {
-    deliveryFee.innerHTML = "免費"
+    deliveryPanel.innerHTML = "免費"
+    deliveryFee = 0
   } else if (
     event.target.nextElementSibling.children[0].className === "dhl-delivery"
   ) {
-    deliveryFee.innerHTML = "$500"
+    deliveryPanel.innerHTML = "$500"
+    deliveryFee = 500
   }
+  processTotalAmount()
 }
 deliveryWrapper.addEventListener("click", processDeliveryFee)
+
 
 // 處理總花費金額
 function processTotalAmount() {
   const sum = document.querySelector(".sum")
-  // sum.innerHTML = "0"
-  // todo 各產品小計加總
-  // todo 運費
-  // todo total amount
-  let totalAmount = 0
-  productsInCart.forEach((product) => {
-    totalAmount += product.unitPrice * product.quantity
-    // return totalAmount
-  });
+  let purchasingAmount = 0
 
-  if ((deliveryFee.innerHTML = "$500")) {
-    totalAmount += 500
-  } else if ((deliveryFee.innerHTML = "免費")) {
-    totalAmount += 0
-  }
-  return totalAmount
-  sum.innerHTML = totalAmount.toLocaleString()
+  // 各產品小計加總
+  productsInCart.forEach((product) => {
+    purchasingAmount += product.unitPrice * product.quantity
+  })
+
+  totalAmount = (purchasingAmount + deliveryFee).toLocaleString()
+
+  sum.innerHTML = `$${totalAmount}`
 }
